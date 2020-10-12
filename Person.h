@@ -1,8 +1,9 @@
 #ifndef PERSON_H
 #define PERSON_H
+#include "Entity.h"
 #include <string>
 using namespace std;
-class Person {
+class Person:public Entity {
 protected:
 	string Name;
 	string SurName;

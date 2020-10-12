@@ -1,14 +1,17 @@
 #ifndef PLACE_H
 #define PLACE_H
 #include <string>
-#include"bicycle.h"
-class place {
+#include"Entity.h"
+using namespace std;
+class place:public Entity {
 private:
 	string street;
 	int count;
-	Bike bike;
+	int serialnumb;
+	int price;
+	bool available;
 public:
-	void placeinfo(Bike& ,string = "", int = 3);
+	place(string, int = 3, int = 0, int = 50, bool = 1);
 	string getstreet();
 	int getcount();
 	void Write();

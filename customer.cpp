@@ -2,10 +2,8 @@
 #include <iostream>
 #include<string>
 using namespace std;
-void Customer::Customerwrite(string Name, string SurName, int number) {
+Customer::Customer(string Name, string SurName, int number) {
 	PersonWrite(Name, SurName);
-	//this->Name = Name;
-	//this->SurName = SurName;
 	this->number = number;
 }
 void Customer::Write() {

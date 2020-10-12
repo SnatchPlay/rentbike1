@@ -1,25 +1,32 @@
 #ifndef REPOSITORY_H
 #define REPOSITORY_H
+#include <fstream>
 
 #include "Entity.h"
-#include<vector>
 using namespace std;
+#include <vector>
 class Repository
 {
 protected:
-	//Entity** data;
-	vector<Entity> data;
-	
-	int maxSize;
-	int current;
+
+
+	vector <Entity*> entity;
+
 	bool sync;
 
-	bool Add();
+	bool Add(Entity*);
+
+public:
+
 	virtual void ReadFromStorage() {}
 	virtual void WriteToStorage() {}
 
-public:
+	vector <Entity*> GetEntity() {
+		return entity;
+	}
+
+	
 	Repository(bool sync = false);
 	~Repository();
 };
-#endif 
+#endif

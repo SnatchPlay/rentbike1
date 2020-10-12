@@ -8,7 +8,7 @@ private:
 	int calls;
 public:
 	void Write();
-	void CallWrite(string = "", string = "", int = 0,int =0);
+	Call(string = "", string = "", int = 0,int =0);
 	string getName();
 	string getSurname();
 	int getstag();

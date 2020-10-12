@@ -1,5 +1,5 @@
 //прокат велосипедів
-#include"bicycle.h"
+
 #include"command.h"
 #include"customer.h"
 #include"place.h"
@@ -13,9 +13,6 @@ using namespace std;
 void showmenu() {
 	command com; int sr, phone; string name, surname,rname;
 	Customer customer;
-	com.readbikefile();
-	com.readtechfile();
-	com.readcallfile();
 	string street;
 	while (true) {
 		cout << "         LET'S GO!         " << endl;
@@ -37,15 +34,10 @@ void showmenu() {
 		}
 		if (user == '1') {
 			com.readcust();
-			/*cout << "Please type info about you:" << endl;
-			cout << "Name:"; cin >> name;
-			cout << "Surname:"; cin >> surname;
-			cout << "Phone:"; cin >> phone;*/
-			//customer.Customerwrite(name, surname, phone);
+			
 			cout << "Our points:"<<endl;
 			com.streets();
 			cout << "Choose a street:"; cin >> street;
-			//for (int i = 0; i < com.countstr(); i++) {
 				if (com.avalsom(street) == false) {
 					cout << "Choose another street.";
 				}
@@ -58,13 +50,13 @@ void showmenu() {
 					
 				}
 			}
-		//}
+		
 		else if (user == '2') {
 			cout << "Where do you want to leave your bike?" << endl;
 			cout << "Our points:";
 			com.streets();
 			cout << "Choose a street:"; cin >> street;
-			//for (int i = 0; i < com.countstr(); i++) {
+			
 				if (com.avalbystr(street) == true) {
 					cout << "Choose another street.";
 				}
@@ -127,15 +119,7 @@ void showmenu() {
 int main() {
 	showmenu();
 	
-	/*command com;
-	com.readbikefile();
-	com.showavalaible();
-	com.streets();
-	com.showbystreet("Roma");
-	com.rewrite();*/
 	
-	
-   // com.showbike();
 
 }
 	

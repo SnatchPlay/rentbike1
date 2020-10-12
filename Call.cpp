@@ -6,7 +6,7 @@ void Call::Write()
 	cout<<"Call" << " " << Name << " " << SurName << " " << stag << endl;
 }
 
-void Call::CallWrite(string Name, string SurName, int stag,int calls)
+ Call::Call(string Name, string SurName, int stag,int calls)
 {
 	PersonWrite(Name, SurName);
 	this->stag = stag;

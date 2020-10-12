@@ -6,11 +6,9 @@ using namespace std;
 
 class Customer:public Person {
 private:
-	//string Name;
-	//string SurName;
 	int number;
 public:
-	void Customerwrite(string = "", string = "", int = 0000000);
+	Customer(string = "", string = "", int = 0000000);
 	void Write();
 	string getname();
 	string getsurname();

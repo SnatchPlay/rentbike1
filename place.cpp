@@ -1,41 +1,45 @@
 #include"place.h"
 #include<iostream>
 using namespace std;
-void place::placeinfo(Bike& bike,string street,int count) {
-	this->bike = bike;
+
+place::place(string street,int count, int serialnumb, int price, bool available )
+{
 	this->street = street;
 	this->count = count;
-	
+	this->serialnumb = serialnumb;
+	this->price = price;
+	this->available = available;
+
 }
 string place::getstreet() {
 	return street;
 }
 void place::Writejustbike() {
-	bike.Write();
+	cout << "Bicycle info:" << serialnumb << " " << price << "$ " << available << endl;
 }
 void place::Write() {
 	cout << "Street:" << street << endl << "Count of avalaible:" << count << endl;
-	bike.Write();
+	cout << "Bicycle info:" << serialnumb << " " << price << "$ " << available << endl;
 }
 void place::showaval() {
-	if (bike.aval() == true) {
-		return bike.Write();
+	if (available == true) {
+		return Writejustbike();
 	}
 }
 bool place::avall() {
-	 return bike.aval();
+	 return available;
 }
 int place::pri() {
-	return bike.pr();
+	return price;
 }
 int place::sr() {
-	return bike.sern();
+	return serialnumb;
 }
 void place::seta(bool a) {
-	bike.setaval(a);
+	this->available = a;
 }
 void place::setsr(int a) {
-	bike.setser(a);
+	this->serialnumb=a;
 }
 int place::getcount() {
 	return count;
