@@ -22,7 +22,7 @@ void PlaceRep::ReadFromStorage()
 {
     ifstream  str1;
     string street1; int ser; int price; bool aval;
-    str1.open("str1.txt");
+    str1.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/str1.txt");
     if (!str1)
     {
         cout << ("Can't open a file ");
@@ -46,7 +46,7 @@ void PlaceRep::ReadFromStorage()
 void PlaceRep::WriteToStorage()
 {
     ofstream str;
-    str.open("str1.txt");
+    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/str1.txt");
     int tmp = entity.size();
     for (int i = 0; i < tmp; i++) {
 

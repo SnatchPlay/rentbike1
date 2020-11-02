@@ -22,7 +22,7 @@ void CallRepository::ReadFromStorage()
 {
     ifstream  str1;
     string name, surname; int stag, calls;
-    str1.open("call.txt");
+    str1.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/call.txt");
     if (!str1)
     {
         cout << ("Can't open a file ");
@@ -48,7 +48,7 @@ void CallRepository::ReadFromStorage()
 void CallRepository::WriteToStorage()
 {
     ofstream str;
-    str.open("call.txt");
+    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/call.txt");
     int tmp = entity.size();
     for (int i = 0; i < tmp; i++) {
 

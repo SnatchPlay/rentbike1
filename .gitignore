@@ -8,3 +8,9 @@
 *.user
 /прокат.sln
 /Debug
+/Admin/Debug/Admin.tlog
+/Admin/Debug
+/Release
+/User/Debug
+/User/Release
+*.pdb

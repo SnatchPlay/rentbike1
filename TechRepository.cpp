@@ -22,7 +22,7 @@ void TechRepository::ReadFromStorage()
 {
     ifstream  str1;
     string name, surname; int stag, rate, cor;
-    str1.open("Tech.txt");
+    str1.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/Tech.txt");
     if (!str1)
     {
         cout << ("Can't open a file ");
@@ -44,7 +44,7 @@ void TechRepository::ReadFromStorage()
 void TechRepository::WriteToStorage()
 {
     ofstream str;
-    str.open("Tech.txt");
+    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/Tech.txt");
     int tmp = entity.size();
     for (int i = 0; i < tmp; i++) {
 
