@@ -38,8 +38,8 @@ void command::AddTech()
 void command::clearfile()
 {
     ofstream str;
-    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/RepList.txt",  ios::out);
-    
+    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/RepList.txt", ios::out);
+
 
     str.close();
 }

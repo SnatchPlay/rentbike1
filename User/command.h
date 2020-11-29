@@ -6,9 +6,7 @@
 #include"Call.h"
 #include"Technic.h"
 #include"Person.h"
-#include "CallRepository.h"
-#include "TechRepository.h"
-#include"PlaceRep.h"
+#include"Repository.h"
 
 
 using namespace std;
@@ -17,9 +15,9 @@ class command {
 	vector<Customer> custcommand;
 public:
 
-	TechRepository techRepository = TechRepository(true);
-	CallRepository callRepository = CallRepository(true);
-	PlaceRep placerep = PlaceRep(true);
+	Repository<Technic> techRepository = Repository<Technic>(true);
+	Repository<Call> callRepository = Repository<Call>(true);
+	Repository<place> placerep = Repository<place>(true);
 
 	void showjustaval(string);
 	void readcust();

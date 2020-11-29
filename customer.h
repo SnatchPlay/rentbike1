@@ -4,7 +4,7 @@
 #include"Person.h"
 using namespace std;
 
-class Customer:public Person {
+class Customer :public Person {
 private:
 	int number;
 public:

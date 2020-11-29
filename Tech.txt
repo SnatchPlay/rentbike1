@@ -1,3 +1,4 @@
 zzzzff ssss 7 5 10
 zzzz gggg 5 9 4
-R F 0 0 0
+R F 0 4 1
+T G 0 0 0

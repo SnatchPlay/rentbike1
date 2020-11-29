@@ -10,7 +10,7 @@ bool command::avalbystr(string street) {//all zaynato= true
     int k = 0;
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
 
-        if ((street == (((place*)placerep.GetEntity()[i])->getstreet())) and ((((place*)placerep.GetEntity()[i])->avall()) == true)) {
+        if ((street == placerep.GetEntity()[i].getstreet()) and ((placerep.GetEntity()[i].avall()) == true)) {
             k++;
         }
     }
@@ -23,7 +23,7 @@ bool command::avalbystr(string street) {//all zaynato= true
 }
 bool command::avalsom(string street) {
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        if ((street == (((place*)placerep.GetEntity()[i])->getstreet())) and ((((place*)placerep.GetEntity()[i])->avall()) == true)) {
+        if ((street == placerep.GetEntity()[i].getstreet()) and ((placerep.GetEntity()[i].avall()) == true)) {
             return true;//ye bike
         }
 
@@ -35,8 +35,8 @@ bool command::avalsom(string street) {
 
 void command::showjustaval(string street) {
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        if ((street == (((place*)placerep.GetEntity()[i])->getstreet())) and ((((place*)placerep.GetEntity()[i])->avall()) == true)) {
-            ((place*)placerep.GetEntity()[i])->Writejustbike();
+        if ((street == placerep.GetEntity()[i].getstreet()) and ((placerep.GetEntity()[i].avall()) == true)) {
+            (placerep.GetEntity()[i]).Writejustbike();
 
         }
     }
@@ -45,7 +45,7 @@ void command::showjustaval(string street) {
 
 void command::streets() {//вулиц≥
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        difstreet.push_back((((place*)placerep.GetEntity()[i])->getstreet()));
+        difstreet.push_back(((placerep.GetEntity()[i]).getstreet()));
     }
     sort(difstreet.begin(), difstreet.end());
     difstreet.erase(unique(difstreet.begin(), difstreet.end()), difstreet.end());
@@ -56,28 +56,34 @@ void command::streets() {//вулиц≥
 
 void command::showbystreet(string streeet) {//пошук за вулицею
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        if (streeet == (((place*)placerep.GetEntity()[i])->getstreet())) {
+        if (streeet == ((placerep.GetEntity()[i]).getstreet())) {
 
-            ((place*)placerep.GetEntity()[i])->Writejustbike();
+            (placerep.GetEntity()[i]).Writejustbike();
         }
         else {
             continue;
         }
     }
 }
-void command::rent(int s) {//
+void command::rent(int s) {//'
+    place p("", 3, 0, 50, false);
     Customer cs;
     ofstream str;
     str.open("C:/Users/џмшфелщ/source/repos/прокат/cus.txt", ios_base::app);
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        if (s == ((place*)placerep.GetEntity()[i])->sr()) {
-            ((place*)placerep.GetEntity()[i])->seta(false);
+        if (s == (placerep.GetEntity()[i]).sr()) {
+            placerep.entity[i] = p;
+            //((placerep.GetEntity()[i]).available) = false;
+             //(placerep.GetEntity()[i]).seta(false);
         }
 
     }
     str << s << " " << custcommand.back().getname() << " " << custcommand.back().getsurname() << " " << custcommand.back().getnumber() << endl;
 
     str.close();
+    for (int k = 0; k < placerep.GetEntity().size(); k++) {
+        placerep.GetEntity()[k].Writejustbike();
+    }
 
 }
 
@@ -85,12 +91,12 @@ void command::shownotavlbystr(string stret, int sr) {
     int f = 1;
 
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
-        if ((stret == (((place*)placerep.GetEntity()[i])->getstreet())) and ((((place*)placerep.GetEntity()[i])->avall()) == false)) {
+        if ((stret == ((placerep.GetEntity()[i]).getstreet())) and (((placerep.GetEntity()[i]).avall()) == false)) {
             if (f > 1) {
                 break;
             }
-            ((place*)placerep.GetEntity()[i])->seta(true);
-            ((place*)placerep.GetEntity()[i])->setsr(sr);
+            (placerep.entity[i]).seta(true);
+            (placerep.entity[i]).setsr(sr);
             f++;
         }
     }
@@ -157,8 +163,8 @@ void command::rewritetechfile()
 void command::setratetech(string name, int newrate)
 {
     for (int i = 0; i < techRepository.GetEntity().size(); i++) {
-        if (name == (((Technic*)techRepository.GetEntity()[i])->getName())) {
-            ((Technic*)techRepository.GetEntity()[i])->setrate(newrate);
+        if (name == ((techRepository.GetEntity()[i]).getName())) {
+            (techRepository.entity[i]).setrate(newrate);
 
         }
     }
@@ -167,8 +173,8 @@ void command::repplus(string name)
 {
 
     for (int i = 0; i < techRepository.GetEntity().size(); i++) {
-        if (name == (((Technic*)techRepository.GetEntity()[i])->getName())) {
-            ((Technic*)techRepository.GetEntity()[i])->setcr((((Technic*)techRepository.GetEntity()[i])->getcr() + 1));
+        if (name == ((techRepository.GetEntity()[i]).getName())) {
+            (techRepository.entity[i]).setcr(((techRepository.entity[i]).getcr() + 1));
 
         }
     }
@@ -176,7 +182,7 @@ void command::repplus(string name)
 void command::showtech()
 {
     for (int i = 0; i < techRepository.GetEntity().size(); i++) {
-        (techRepository.GetEntity()[i])->Write();
+        (techRepository.GetEntity()[i]).Write();
 
     }
 }
@@ -199,7 +205,7 @@ void command::rewritecallfile()
 void command::showcaller()
 {
     for (int i = 0; i < callRepository.GetEntity().size(); i++) {
-        (callRepository.GetEntity()[i])->Write();
+        (callRepository.GetEntity()[i]).Write();
 
     }
 }
@@ -207,8 +213,8 @@ void command::showcaller()
 void command::callplus(string name)
 {
     for (int i = 0; i < callRepository.GetEntity().size(); i++) {
-        if (name == (((Call*)callRepository.GetEntity()[i])->getName())) {
-            ((Call*)callRepository.GetEntity()[i])->setcall((((Call*)callRepository.GetEntity()[i])->getcalls() + 1));
+        if (name == ((callRepository.GetEntity()[i]).getName())) {
+            (callRepository.entity[i]).setcall(((callRepository.entity[i]).getcalls() + 1));
 
         }
     }
