@@ -1,4 +1,6 @@
 zzzzff ssss 7 5 10
 zzzz gggg 5 9 4
-R F 0 4 1
-T G 0 0 0
+R F 0 0 0
+FFF SSS 0 19 56
+kkk sss 0 0 0
+misko pisko 0 99 0

@@ -6,13 +6,13 @@ using namespace std;
 //	this->Name = Name;
 //	this->SurName = SurName;
 //}
-void Person::Write()
-{
-
-}
-
-void Person::PersonWrite(string Name, string SurName)
-{
-	this->Name = Name;
-	this->SurName = SurName;
-}
+//void Person::Write()
+//{
+//
+//}
+//
+//void Person::PersonWrite(string Name, string SurName)
+//{
+//	this->Name = Name;
+//	this->SurName = SurName;
+//}

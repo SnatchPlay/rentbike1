@@ -3,7 +3,9 @@
 #include<string>
 using namespace std;
 Customer::Customer(string Name, string SurName, int number) {
-	PersonWrite(Name, SurName);
+	//PersonWrite(Name, SurName);
+	this->Name = Name;
+	this->SurName = SurName;
 	this->number = number;
 }
 void Customer::Write() {

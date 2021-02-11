@@ -69,21 +69,21 @@ void command::rent(int s) {//'
     place p("", 3, 0, 50, false);
     Customer cs;
     ofstream str;
-    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/cus.txt", ios_base::app);
+    str.open("C:/Users/Ûלרפוכש/source/repos/Project1/cus.txt", ios_base::app);
     for (int i = 0; i < placerep.GetEntity().size(); i++) {
         if (s == (placerep.GetEntity()[i]).sr()) {
-            placerep.entity[i] = p;
+            //placerep.entity[i] = p;
             //((placerep.GetEntity()[i]).available) = false;
-             //(placerep.GetEntity()[i]).seta(false);
+             (placerep.entity[i]).seta(false);
         }
 
     }
     str << s << " " << custcommand.back().getname() << " " << custcommand.back().getsurname() << " " << custcommand.back().getnumber() << endl;
 
     str.close();
-    for (int k = 0; k < placerep.GetEntity().size(); k++) {
+   /* for (int k = 0; k < placerep.GetEntity().size(); k++) {
         placerep.GetEntity()[k].Writejustbike();
-    }
+    }*/
 
 }
 
@@ -114,7 +114,7 @@ void command::returnb(int ar)
     int serial, phone; string strr, name, surname;
 
     ifstream cs1; ofstream cs;
-    cs1.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/cus.txt");
+    cs1.open("C:/Users/Ûלרפוכש/source/repos/Project1/cus.txt");
 
     while (cs1) {
         cs1 >> serial >> name >> surname >> phone;
@@ -123,7 +123,7 @@ void command::returnb(int ar)
     }
     serials.pop_back();
     cs1.close();
-    cs1.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/cus.txt");
+    cs1.open("C:/Users/Ûלרפוכש/source/repos/Project1/cus.txt");
     while (cs1) {
         getline(cs1, strr);
         cust.push_back(strr);
@@ -134,7 +134,7 @@ void command::returnb(int ar)
             cust.erase(cust.begin() + i);
         }
     }
-    cs.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/cus.txt");
+    cs.open("C:/Users/Ûלרפוכש/source/repos/Project1/cus.txt");
     for (int i = 0; i < cust.size(); i++) {
         cs << cust[i] << endl;
     }
@@ -192,7 +192,7 @@ void command::showtech()
 void command::writerep(string report)
 {
     ofstream str;
-    str.open("C:/Users/Ûלרפוכש/source/repos/ןנמךאע/RepList.txt", ios_base::app);
+    str.open("C:/Users/Ûלרפוכש/source/repos/Project1/RepList.txt", ios_base::app);
     str << report << endl;
 
     str.close();

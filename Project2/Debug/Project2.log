@@ -1,0 +1,6 @@
+﻿  command.cpp
+C:\Users\Ымшфелщ\source\repos\Project1\Project2\command.cpp(45,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Ымшфелщ\source\repos\Project1\Project2\command.cpp(73,23): warning C4018: <: несоответствие типов со знаком и без знака
+  main.cpp
+  Создание кода...
+  Project2.vcxproj -> C:\Users\Ымшфелщ\source\repos\Project1\Debug\Admin.exe
